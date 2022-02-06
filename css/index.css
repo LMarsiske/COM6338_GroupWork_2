@@ -1,5 +1,4 @@
 /* CSS Reset */
-/* Delete this comment */
 html,
 body,
 div,
@@ -89,6 +88,8 @@ video {
   vertical-align: baseline;
 }
 
+/* Custom css */
+/* Css is written for mobile-first, so the default css rules apply to the smallest screen size and up */
 html {
   background-image: url(../images/clouds_background.jpg);
   background-position: center;
@@ -128,7 +129,8 @@ details {
   margin: 2% 0;
 }
 
-#row {
+/* This is the outermost containing div around main and the aside. We use this to easily change the layout order from 1 column to two as the screen size changes. */
+#container {
   display: flex;
   flex-direction: column;
 }
@@ -196,6 +198,7 @@ footer {
   text-align: center;
 }
 
+/* This first media query changes the layout for a wider screen size, implementing two small columns within the larger single column layout */
 @media (min-width: 900px) {
   h2 {
     margin-bottom: 5%;
@@ -230,12 +233,13 @@ footer {
   }
 }
 
+/* This media query applies to the largest screen size and re-implements the original two column layout that we created in the previous group work assignment */
 @media (min-width: 1200px) {
   p {
     margin: 2.5% 0;
   }
 
-  #row {
+  #container {
     flex-direction: row;
   }
 
